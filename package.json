@@ -1,7 +1,7 @@
 {
-  "name": "Nuxt + Contentful",
+  "name": "nuxt-with-contentful",
   "version": "1.0.0",
-  "description": "Nuxt + Contentful = <3",
+  "description": "nuxt and contentful",
   "author": "Juha Lehtonen <hello@juha.tl>",
   "private": true,
   "scripts": {

@@ -8,6 +8,15 @@ Web app itself built with [Nuxt.js](https://nuxtjs.org/) and [nuxt-contentful-st
 Publish directiry: dist
 Build command: nuxt generate
 
+Need to have these env vars:
+```
+{
+  "CTF_BLOG_ARTICLE_TYPE_ID": "blogArticle",
+
+  "CTF_SPACE_ID": "ID",
+  "CTF_CDA_ACCESS_TOKEN": "TOKEN"
+}
+```
 
 ## Cool things about Netlify
 

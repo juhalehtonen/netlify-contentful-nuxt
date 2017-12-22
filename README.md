@@ -4,6 +4,10 @@ This is a very quick demo application that uses [Netlify](https://www.netlify.co
 
 Web app itself built with [Nuxt.js](https://nuxtjs.org/) and [nuxt-contentful-starter](https://github.com/yliaho/nuxt-contentful-starter).
 
+## Deployment to Netlify
+Publish directiry: dist
+Build command: nuxt generate
+
 
 ## Cool things about Netlify
 

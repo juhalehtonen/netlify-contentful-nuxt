@@ -10,5 +10,5 @@ npm-debug.log
 # Nuxt generate
 dist
 
-# CONTENTFUL
+# CONTENTFUL API KEYS
 .contentful.json

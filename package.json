@@ -1,8 +1,8 @@
 {
-  "name": "nuxt-contentful-starter",
+  "name": "Nuxt + Contentful",
   "version": "1.0.0",
   "description": "Nuxt + Contentful = <3",
-  "author": "Joonas Yliaho <joonas.yliaho@gmail.com>",
+  "author": "Juha Lehtonen <hello@juha.tl>",
   "private": true,
   "scripts": {
     "dev": "nuxt",

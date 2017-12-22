@@ -1,4 +1,4 @@
-const contentful = require('./.contentful.json')
+//const contentful = require('./.contentful.json')
 
 module.exports = {
   /*

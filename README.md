@@ -46,6 +46,10 @@ Need to have these env vars:
 - Need to set up webhooks in Contentful that get triggered when content changes, have Netlify listen for these (via `build hooks`) and rebuild site
 
 
+## Useful links
+- https://dev.to/milkstarz/contentful-and-netlify-the-dynamic-duo-of-static-site-management-55i
+- https://www.netlify.com/docs/webhooks/
+
 ## Build & Setup
 
 ``` bash

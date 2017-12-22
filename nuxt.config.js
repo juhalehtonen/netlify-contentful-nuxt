@@ -18,7 +18,7 @@ module.exports = {
   /*
   ** Enviroment variables
   */
-  env: contentful,
+  //env: contentful,
   /*
   ** Customize the progress bar color
   */

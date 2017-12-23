@@ -5,6 +5,7 @@ This is a very quick demo application that uses [Netlify](https://www.netlify.co
 Web app itself built with [Nuxt.js](https://nuxtjs.org/) and [nuxt-contentful-starter](https://github.com/yliaho/nuxt-contentful-starter).
 
 ## Deployment to Netlify
+
 Publish directiry: dist
 Build command: nuxt generate
 
@@ -47,8 +48,10 @@ Need to have these env vars:
 
 
 ## Useful links
+
 - https://dev.to/milkstarz/contentful-and-netlify-the-dynamic-duo-of-static-site-management-55i
 - https://www.netlify.com/docs/webhooks/
+- https://www.contentful.com/developers/docs/javascript/tutorials/
 
 ## Build & Setup
 
@@ -69,22 +72,11 @@ $ npm run generate
 
 For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
 
-## Findings after one day of experience
-
-**Contentful** is a headless CMS that gives you simple tools to manage content creation and data modeling. More specifically, a headless CMS is a content management system that has an UI for managing content on the admin side, but is decoupled (or should I say beheaded) from the visual representation of the content.
-
-**Netlify** is an all-in-one hosting solution for static websites.
-
-## Using Netlify and Contentful together
-Both services allow setting up webhooks, and it is webhooks that allows us to have the two communicate with each other.
-
-By creating a `deploy hook` in Netlify, we obtain a specific URL which can be POSTed to to initiate a new build. We can then use this URL as the destination of an outgoing webhook in Contentful, which can be triggered by content-edit-actions of our choosing. 
-
-As the content from Contentful gets fetched and inserted to our web app at build time, our content gets refreshed by the means of rebuilding the entire web app.
-
-The downside of this approach is that the content edit is not instant, as we need to wait for Netlify to rebuild the app from scratch. Depending on the build workflow that you use, this can take a couple of minutes to finish.
+# Findings after one day of experience
 
 ## Contentful
+
+**Contentful** is a headless CMS that gives you simple tools to manage content creation and data modeling. More specifically, a headless CMS is a content management system that has an UI for managing content on the admin side, but is decoupled (or should I say beheaded) from the visual representation of the content.
 
 ### Pros of Contentful
 - API-first design allows versatile use of content on any platform (e.g. mobile apps), not just your website
@@ -98,13 +90,26 @@ The downside of this approach is that the content edit is not instant, as we nee
 
 ## Netlify
 
-# Pros of Netlify
+**Netlify** is an all-in-one hosting solution for static websites that takes care of everything from HTTPS, HTTP2, git-based deploys, domain management and everything else one could want for a static hosting solution.
+
+They also offer an open source NetlifyCMS, a content management system that uses git under the hood to manage content. This wasn't tried out in this example repo, but can be a worthy idea to use when you don't need an API for your content.
+
+### Pros of Netlify
 - Free from the feeling of a vendor lock-in, simply build your site elsewhere and you're golden
 - Extensive free tier: custom domains, single-click HTTPS, rollbacks, A/B testing, pull request previews...
 
-## Cons of Netlify
+### Cons of Netlify
 - Limited number of supported languages (while multiple are available, one could wish to be able to use a specific tool or language)
 - Only for static websites or web apps that don't need any kind of long-running processes or other features often associated with self-hosted solutions
+
+## Using Netlify and Contentful together
+Both services allow setting up webhooks, and it is webhooks that allows us to have the two communicate with each other.
+
+By creating a `deploy hook` in Netlify, we obtain a specific URL which can be POSTed to to initiate a new build. We can then use this URL as the destination of an outgoing webhook in Contentful, which can be triggered by content-edit-actions of our choosing. 
+
+As the content from Contentful gets fetched and inserted to our web app at build time, our content gets refreshed by the means of rebuilding the entire web app.
+
+The downside of this approach is that the content edit is not instant, as we need to wait for Netlify to rebuild the app from scratch. Depending on the build workflow that you use, this can take a couple of minutes to finish.
 
 ## When would I use these tools?
 By providing hosting, continuous delivery, HTTPS & HTTP2 out of the box, Netlify takes a lot of setup work out of setting up a simple site or a web app. While similar-ish setups can be achieved fairly easily with tools like Terraform and CircleCI, not having to manage or configure those separately can be a win in projects where you want to just focus on the code. 

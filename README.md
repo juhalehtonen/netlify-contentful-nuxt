@@ -99,6 +99,7 @@ They also offer an open source NetlifyCMS, a content management system that uses
 ### Pros of Netlify
 - Free from the feeling of a vendor lock-in, simply build your site elsewhere and you're golden
 - Extensive free tier: custom domains, single-click HTTPS, rollbacks, A/B testing, pull request previews...
+- Global CDN, supposedly gives good performance worldwide (didn't test this independently yet)
 
 ### Cons of Netlify
 - Limited number of supported languages (while multiple are available, one could wish to be able to use a specific tool or language)

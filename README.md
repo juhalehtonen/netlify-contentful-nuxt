@@ -6,10 +6,15 @@ Web app itself built with [Nuxt.js](https://nuxtjs.org/) and [nuxt-contentful-st
 
 ## Deployment to Netlify
 
-Publish directiry: dist
-Build command: nuxt generate
+Use the following settings on Netlify:
 
-Need to have these env vars:
+```
+Publish directory: dist
+Build command: nuxt generate
+```
+
+Additionally, you need to set up the following environment variables:
+
 ```
   "CTF_BLOG_ARTICLE_TYPE_ID": "blogArticle",
   "CTF_SPACE_ID": "ID",

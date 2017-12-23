@@ -116,7 +116,7 @@ The downside of this approach is that the content edit is not instant, as we nee
 ## When would I use these tools?
 By providing hosting, continuous delivery, HTTPS & HTTP2 out of the box, Netlify takes a lot of setup work out of setting up a simple site or a web app. While similar-ish setups can be achieved fairly easily with tools like Terraform and CircleCI, not having to manage or configure those separately can be a win in projects where you want to just focus on the code. 
 
-Contentful needs a more defined business case to be worthwhile. Aside from the free tier that requires attribution, the pricing options are not very hobby-friendly.
+Due to the pricing options, Contentful needs a more defined business case to be worthwhile. Aside from the free tier that requires attribution, the pricing options are not very hobby-friendly (ranging between 250 - 900 euros per month for businesses). The major advantage of a solution like this is having a high-availability content API that can be used on a variety of systems and that can be worked on independently from actual code.
 
 As with any hosted service, there's a certain degree of marriage that you enter when you choose to use their proprietary tooling. Netlify doesn't really dictate how you build your site and moving to other solutions is quite simple (as you get to choose your build tools pretty freely), but Contentful definitely obtains a firmer grip of you. While they do offer a tool to produce a JSON dump of your data, that data would still need to be converted into a different format manually to use a different content hosting solution.
 

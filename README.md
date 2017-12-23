@@ -68,3 +68,48 @@ $ npm run generate
 ```
 
 For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
+
+## Findings after one day of experience
+
+**Contentful** is a headless CMS that gives you simple tools to manage content creation and data modeling. More specifically, a headless CMS is a content management system that has an UI for managing content on the admin side, but is decoupled (or should I say beheaded) from the visual representation of the content.
+
+**Netlify** is an all-in-one hosting solution for static websites.
+
+## Using Netlify and Contentful together
+Both services allow setting up webhooks, and it is webhooks that allows us to have the two communicate with each other.
+
+By creating a `deploy hook` in Netlify, we obtain a specific URL which can be POSTed to to initiate a new build. We can then use this URL as the destination of an outgoing webhook in Contentful, which can be triggered by content-edit-actions of our choosing. 
+
+As the content from Contentful gets fetched and inserted to our web app at build time, our content gets refreshed by the means of rebuilding the entire web app.
+
+The downside of this approach is that the content edit is not instant, as we need to wait for Netlify to rebuild the app from scratch. Depending on the build workflow that you use, this can take a couple of minutes to finish.
+
+## Contentful
+
+### Pros of Contentful
+- API-first design allows versatile use of content on any platform (e.g. mobile apps), not just your website
+- Improved security by not having an admin panel coupled to your site and served under the same domain
+
+### Cons of Contentful
+- Needs more initial work to setup fetching of the content
+- Can lead to each implementation working slightly differently
+- More limited content type fields than what you'd get with relatively similar effort using WordPress + ACF
+- Pricing options are quite steep, needs a serious business reason to go with Contentful
+
+## Netlify
+
+# Pros of Netlify
+- Free from the feeling of a vendor lock-in, simply build your site elsewhere and you're golden
+- Extensive free tier: custom domains, single-click HTTPS, rollbacks, A/B testing, pull request previews...
+
+## Cons of Netlify
+- Limited number of supported languages (while multiple are available, one could wish to be able to use a specific tool or language)
+- Only for static websites or web apps that don't need any kind of long-running processes or other features often associated with self-hosted solutions
+
+## When would I use these tools?
+By providing hosting, continuous delivery, HTTPS & HTTP2 out of the box, Netlify takes a lot of setup work out of setting up a simple site or a web app. While similar-ish setups can be achieved fairly easily with tools like Terraform and CircleCI, not having to manage or configure those separately can be a win in projects where you want to just focus on the code. 
+
+Contentful needs a more defined business case to be worthwhile. Aside from the free tier that requires attribution, the pricing options are not very hobby-friendly.
+
+As with any hosted service, there's a certain degree of marriage that you enter when you choose to use their proprietary tooling. Netlify doesn't really dictate how you build your site and moving to other solutions is quite simple (as you get to choose your build tools pretty freely), but Contentful definitely obtains a firmer grip of you. While they do offer a tool to produce a JSON dump of your data, that data would still need to be converted into a different format manually to use a different content hosting solution.
+
